@@ -1,0 +1,42 @@
+* {margin: 0; padding: 0;}
+
+.content {
+    display: flex;
+    margin: 100px 50px 50px 50px;
+    font-family: sans-serif;
+}
+
+#area {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.cell {
+    width: 150px;
+    height: 150px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 100px;
+    border: 1px solid #000;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.cell:hover {
+    background-color: #F1F1F1;
+}
+
+.currentPlayer {
+    width: 140px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+button {
+    width : 100px;
+    height: 50px;
+    
+}
