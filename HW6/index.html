@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погодный виджет</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Погодный виджет</h1>
+        <div class="search-section">
+          <input id="text" type="text" placeholder="Введите город">
+          <button onclick="loadWeather()">Показать погоду</button>
+          <button onclick="cancelRequest()">Отменить</button>
+      </div>
+        <div id="weatherSpace" class="weather-info"></div>
+        <div id="forecastSpace" class="forecast-info">
+            <div class="forecast-container">
+            </div>
+        </div>
+        <div id="error" class="error-message"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

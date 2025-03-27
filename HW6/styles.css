@@ -1,0 +1,195 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Контейнер */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Заголовок */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Поле ввода */
+input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #ff6f61;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #ff4a3d;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Блок с текущей погодой */
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.weather-info img {
+    width: 100px;
+    height: 100px;
+    margin: 15px 0;
+}
+
+.weather-info p {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Блок с прогнозом на неделю */
+.forecast-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 15px 0;
+    animation: fadeIn 1s ease-in-out 0s;
+}
+
+.forecast-day {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    min-width: 140px;
+    flex: 1 1 auto;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.forecast-day:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.forecast-day img {
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+}
+
+.forecast-day p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* Сообщение об ошибке */
+.error-message {
+    color: #ff6b6b;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    input[type="text"], button {
+        font-size: 14px;
+    }
+
+    .forecast-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .forecast-day {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+.loading {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin: 20px 0;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+button {
+    width: auto;
+    margin: 0 5px;
+    padding: 12px 20px;
+}
